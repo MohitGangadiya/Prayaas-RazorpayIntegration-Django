@@ -1,0 +1,41 @@
+<!-- Donation Form page  -->
+
+{% load static %}
+
+{% block css %}
+<link rel="stylesheet" type="text/css" href="{% static 'Style/donate_style.css' %}">
+{% endblock css %}
+
+{% block box %}
+
+<div class="box">
+
+  <img src="{% static 'Images/Prayaas.png' %}" alt="logo" />
+  <h2>Gift</h2>
+
+  <form id='form'  autocomplete="off" action='pay' method='post'>
+    {% csrf_token %}
+    
+    <div class="amount-group">
+      <label>
+        <div id="set-amount-button">₹  <input name='amount' type="number" class="user-amount" placeholder="" required></div>
+      </label>
+    </div>
+
+    <input class='input' type='text' id='name' name='name' placeholder='Full Name *' required>
+    <label for="anonymous"><input type='checkbox' value=True name='anonymous' id='anonymous'>Donate anonymously </label>
+    <input class='input' type='email' id='email' name='email' placeholder='Email *' required>
+    <label for="receipt"><input type='checkbox' value='True' name='receipt' id='recipt'>Email me invoice</label>
+    <input class='input' type='tel' id='number' name='number' maxlength="10" placeholder='Phone Number'> 
+    <button type='button' class='cancel' onclick="window.location.href='/'"> Cancel </button>
+    <button type='submit' class='submit'> Submit </button>
+
+    <div class='quote'>
+      <q>There is no greater joy, nor greater reward than to make a fundamental difference in someone’s life.</q> <br> <span>- Mary Rose McGeady </span>
+    </div>
+
+  </form>
+
+</div>
+
+{% endblock box %}

@@ -1,0 +1,49 @@
+<!-- Razorpay Button Integration on Payment page -->
+
+{% extends 'donate_form.html' %}
+
+{% load static %}
+
+{% block box %}
+
+<div class="box pay">
+
+  <img src="{% static 'Images/Prayaas.png' %}" alt="logo" />
+
+  <div class='razorpay'>
+
+    <form action="/success" method="POST">
+      {% csrf_token %}
+
+      <script
+        src="https://checkout.razorpay.com/v1/checkout.js"
+        data-key="test keyid"
+        data-amount="{{payment.amount}}" 
+        data-currency="INR"
+        data-order_id="{{payment.id}}"
+        data-buttontext="Pay with Razorpay"
+        data-name="Prayaas Foundation"
+        data-description=""
+        data-image="{% static 'Images/Prayaas.png' %}"
+        data-prefill.name=""
+        data-prefill.email=""
+        data-theme.color="#FF7A59"
+      ></script>
+
+      <input type="hidden" custom="Hidden Element" name="hidden">
+
+    </form>
+
+  </div>
+
+  <button type='button' class='cancel pay' onclick="window.location.href='/'"> Cancel </button>
+
+  <div class='quote pay'>
+    <q>Thank you for your support.</q> <br>
+    <q>Together we can make a difference</q> <br> 
+    <span>- Team Prayaas </span>
+  </div>
+
+</div>
+
+{% endblock box %}

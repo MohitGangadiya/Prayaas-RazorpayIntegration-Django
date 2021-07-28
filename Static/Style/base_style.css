@@ -1,0 +1,593 @@
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,700;1,400;1,500&family=Reenie+Beanie&display=swap");
+
+/* 
+  font-family: 'Playfair Display', serif;
+  font-family: 'Reenie Beanie', cursive;
+
+  --space-cadet: #2d3142;
+  --independence: #4c5c78;  
+  --silver-sand: #c3c6c6;
+  --white: #ffffff;
+  --outrageous-orange: #ff7a59;
+*/
+
+:root {
+  --space-cadet: #2D3142;
+  --independence: #4C5C78;
+  --silver-sand: #C3C6C6;
+  --white: #FFFFFF;
+  --outrageous-orange: #FF7A59;
+}
+
+body {
+  margin: 0px;
+  padding: 0px;
+  font-family: 'Playfair Display', serif;
+}
+
+/* header */
+header {
+  height: 56px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  font-size: 16px;
+  color: var(--space-cadet);
+  border-bottom: 1px solid var(--silver-sand);
+}
+
+/* header - contact */
+header .contact i {
+  border-left: 1px solid  var(--silver-sand);
+  line-height: 25px;
+  padding: 0 10px;
+}
+
+header .contact :nth-child(2) {
+  padding-right: 50px;
+}
+
+/* header - donate */
+header .donate {
+  padding: 8px;
+  font-size: 20px;
+  color: var(--outrageous-orange);
+  background: var(--white);
+  border: var(--outrageous-orange) solid 0.85px;
+  border-radius: 5px;
+  position: relative;
+  transition: all 500ms ease-in-out;
+}
+
+header .donate:hover {
+  background: var(--outrageous-orange);
+  color: var(--white);
+  transition: all 500ms ease-in-out;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.05), 0 3px 3px rgba(0, 0, 0, 0.1);
+}
+
+header .donate::after {
+  color: var(--outrageous-orange);
+  content: "\f004";
+  font: 18px "FontAwesome";
+  padding-left: 7px;
+  transition: all 700ms ease-in-out;
+}
+
+header .donate:hover::after {
+  color: var(--white);
+  transition: all 700ms ease-in-out;
+}
+
+/* header - social media icons */
+#btn-tt,
+#btn-f,
+#btn-i,
+#btn-lin{
+  text-decoration: none;
+  font-size: 20px;
+  padding: 8px;
+}
+
+#btn-tt i,
+#btn-f i,
+#btn-i i,
+#btn-lin i {
+  transition: all 200ms ease-in-out;
+}
+
+#btn-tt:hover i,
+#btn-f:hover i, 
+#btn-i:hover i,
+#btn-lin:hover i {
+  font-size: 23px;
+  transition: all 200ms ease-in-out;
+}
+
+#btn-tt {
+  color: #1DA1F2;
+}
+
+#btn-f {
+  color: #4267B2;
+}
+
+#btn-i {
+  color: #E95950;
+}
+
+#btn-lin {
+  color: #0077B5;
+}
+
+/* menu - logo title */
+.logo a:hover{
+  text-decoration: none;
+}
+
+#logo_title{
+  display: flex;
+  align-items: center;
+  margin-right: 650px;
+}
+
+#logo {
+    width: 75px;
+    height: 50px;
+    padding-right: 10px;
+}
+  
+#title {
+  margin: 0;
+  padding: 0;
+  font-size: 40px;
+  font-family: 'Reenie Beanie', cursive;
+}
+
+/* navigation bar */
+#menu {
+  margin: 0px;
+  padding: 9px;
+  position: sticky;
+  top: 0px;
+  background: var(--white);
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  list-style: none;
+  font-size: 18px;
+  border-bottom: 1px solid var(--silver-sand);
+}
+
+#menu a {
+  text-decoration: none;
+  color: var(--space-cadet);
+}
+
+#menu li a:hover {
+  text-decoration: underline;
+  color: var(--independence);
+}
+
+#active-page{
+  text-decoration: underline;
+  color: var(--silver-sand);
+}
+
+/* home page - image */
+.container-image img{
+  height: auto;
+  width: 100%;
+}
+
+@keyframes shine {
+
+  0%
+    {
+      text-shadow: 0;
+    }
+
+  50%{
+    text-shadow: 0 0 2px var(--white);
+  }
+
+  100%{
+    text-shadow: 0 0 4px var(--white);
+  }
+  
+}
+
+/* responisveness */
+@media screen and (max-width:240px) {
+  body{
+    display: none;
+  }
+}
+
+@media only screen and (min-width:240px) and (max-width: 280px){
+  header {
+    height:40px;
+    font-size: 7px;
+  }
+
+  header .contact i {
+    border-width: 0px;
+    padding: 0px;
+  }
+
+  header .contact :nth-child(2)::after {
+    content: "\a";
+    white-space: pre;
+  }
+
+  #btn-f::before{
+    content: "\a";
+    white-space: pre;
+  }
+
+  #btn-tt,
+  #btn-f,
+  #btn-i,
+  #btn-lin{
+    font-size: 7px;
+    padding: 1.5px;
+  }
+
+  header .donate {
+    padding: 4px;
+    font-size: 8px;
+  }
+
+  header .donate::after {
+    font: 9px "FontAwesome";
+    padding-left: 4px;
+  }
+
+  #logo_title{
+    margin-right: 7px;
+  }
+
+  #logo {
+    width: 18px;
+    height: 10px;
+    padding-right: 5px;
+  }
+
+  #title {
+  font-size: 12px;
+  }
+
+  #menu {
+    padding: 4px;
+    font-size: 7px;
+  }
+}
+
+@media only screen and (min-width: 280px)  and (max-width: 375px) {
+  header {
+    height:40px;
+    font-size: 8px;
+  }
+
+  header .contact i {
+    border-width: 0px;
+    padding: 0 5px;
+  }
+
+  header .contact :nth-child(2)::after {
+    content: "\a";
+    white-space: pre;
+  }
+
+  #btn-f::before{
+    content: "\a";
+    white-space: pre;
+  }
+
+  #btn-tt,
+  #btn-f,
+  #btn-i,
+  #btn-lin{
+    font-size: 10px;
+    padding: 2px;
+  }
+
+  header .donate {
+    padding: 4px;
+    font-size: 10px;
+  }
+
+  header .donate::after {
+    font: 10px "FontAwesome";
+    padding-left: 5px;
+  }
+
+  #logo_title{
+    margin-right: 10px;
+  }
+
+  #logo {
+    width: 22px;
+    height: 12px;
+    padding-right: 5px;
+  }
+
+  #title {
+  font-size: 14px;
+  }
+
+  #menu {
+    padding: 5px;
+    font-size: 8px;
+  }
+}
+
+@media only screen and (min-width: 375px) and (max-width: 425px)  {
+  header {
+    height: 45px;
+    font-size: 8px;
+  }
+
+  header .contact i {
+    border-width: 0px;
+    padding: 0 5px;
+  }
+
+  header .contact :nth-child(2)::after {
+    content: "\a";
+    white-space: pre;
+  }
+
+  #btn-f::before{
+    content: "\a";
+    white-space: pre;
+  }
+
+  #btn-tt,
+  #btn-f,
+  #btn-i,
+  #btn-lin{
+    font-size: 10px;
+    padding: 5px;
+  }
+
+  header .donate {
+    padding: 5px;
+    font-size: 12px;
+  }
+
+  header .donate::after {
+    font: 12px "FontAwesome";
+    padding-left: 7px;
+  }
+
+  #logo_title{
+    margin-right: 10px;
+  }
+
+  #logo {
+    width: 25px;
+    height: 13px;
+    padding-right: 5px;
+  }
+
+  #title {
+  font-size: 15px;
+  }
+
+  #menu {
+    padding: 5px;
+    font-size: 9px;
+  }
+}
+
+@media only screen and (min-width: 425px) and (max-width: 768px)  {
+  header {
+    font-size: 10px;
+  }
+
+  header .contact i {
+    border-width: 0;
+    padding: 0 5px;
+  }
+
+  header .contact :nth-child(2)::after {
+    content: "\a";
+    white-space: pre;
+  }
+
+  #btn-f::before{
+    content: "\a";
+    white-space: pre;
+  }
+
+  #btn-tt,
+  #btn-f,
+  #btn-i,
+  #btn-lin{
+    font-size: 10px;
+    padding: 5px;
+  }
+
+  header .donate {
+    padding: 5px;
+    font-size: 12px;
+  }
+
+  header .donate::after {
+    font: 12px "FontAwesome";
+    padding-left: 7px;
+  }
+
+  #logo_title{
+    margin-right: 10px;
+  }
+
+  #logo {
+    width: 25px;
+    height: 13px;
+    padding-right: 5px;
+  }
+
+  #title {
+  font-size: 18px;
+  }
+
+  #menu {
+    padding: 5px;
+    font-size: 10px;
+  }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 1024px)  {
+  header {
+    font-size: 12px;
+  }
+
+  header .contact i {
+    padding: 0 6px;
+  }
+
+  header .contact :nth-child(2){
+    padding-right: 25px;
+  }
+
+  #btn-tt,
+  #btn-f,
+  #btn-i,
+  #btn-lin{
+    font-size: 12px;
+    padding: 5px;
+  }
+
+  header .donate {
+    padding: 6px;
+    font-size: 14px;
+  }
+
+  header .donate::after {
+    font: 14px "FontAwesome";
+    padding-left: 7px;
+  }
+
+  #logo_title{
+    margin-right: 25px;
+  }
+
+  #logo {
+    width: 32px;
+    height: 20px;
+    padding-right: 7px;
+  }
+
+  #title {
+  font-size: 22px;
+  }
+
+  #menu {
+    padding: 5px;
+    font-size: 13px;
+  }
+}
+
+@media only screen and (min-width: 1024px) and (max-width: 1440px)  {
+  header {
+    font-size: 14px;
+  }
+
+  header .contact i {
+    padding: 0 8px;
+  }
+
+  header .contact :nth-child(2){
+    padding-right: 35px;
+  }
+
+  #btn-tt,
+  #btn-f,
+  #btn-i,
+  #btn-lin{
+    font-size: 15px;
+    padding: 7px;
+  }
+
+  header .donate {
+    padding: 8px;
+    font-size: 16px;
+  }
+
+  header .donate::after {
+    font: 16px "FontAwesome";
+    padding-left: 8px;
+  }
+
+  #logo_title{
+    margin-right: 70px;
+  }
+
+  #logo {
+    width: 38px;
+    height: 25px;
+    padding-right: 9px;
+  }
+
+  #title {
+  font-size: 25px;
+  }
+
+  #menu {
+    padding: 5px;
+    font-size: 15px;
+  }
+}
+
+@media only screen and (min-width: 2560px) {
+  header {
+    font-size: 16px;
+  }
+
+  header .contact i {
+    padding: 0 10px;
+  }
+
+  header .contact :nth-child(2){
+    padding-right: 65px;
+  }
+
+  #btn-tt,
+  #btn-f,
+  #btn-i,
+  #btn-lin{
+    font-size: 18px;
+    padding: 10px;
+  }
+
+  header .donate {
+    padding: 10px;
+    font-size: 20px;
+  }
+
+  header .donate::after {
+    font: 20px "FontAwesome";
+    padding-left: 10px;
+  }
+
+  #logo_title{
+    margin-right: 200px;
+  }
+
+  #logo {
+    width: 42px;
+    height: 30px;
+    padding-right: 15px;
+  }
+
+  #title {
+  font-size: 35px;
+  }
+
+  #menu {
+    padding: 5px;
+    font-size: 20px;
+  }
+}

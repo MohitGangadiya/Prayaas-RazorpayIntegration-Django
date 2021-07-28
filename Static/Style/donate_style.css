@@ -1,0 +1,210 @@
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,700;1,400;1,500&family=Reenie+Beanie&display=swap");
+
+/* 
+  font-family: 'Playfair Display', serif;
+  font-family: 'Reenie Beanie', cursive;
+  
+  --space-cadet: #2d3142;
+  --independence: #4c5c78;
+  --silver-sand: #c3c6c6;
+  --white: #ffffff;
+  --outrageous-orange: #ff7a59;
+*/
+
+:root {
+  --space-cadet: #2D3142;
+  --independence: #4C5C78;
+  --silver-sand: #C3C6C6;
+  --white: #FFFFFF;
+  --outrageous-orange: #FF7A59;
+}
+
+body {
+  margin: 0;
+  background-color: var(--silver-sand);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  width: 100vw;
+  font-family: 'Playfair Display', serif;
+} 
+
+/* box */
+.box {
+  width: 360px;
+  height: 440px;
+  background-color: var(--white);
+
+  /* shadow */
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05), 0 6px 6px rgba(0, 0, 0, 0.1);
+  border-radius: 20px;
+  padding: 50px 40px;
+  position: relative;
+}
+
+.box.pay{
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.box::before {
+  background-color: var(--outrageous-orange);
+  border-radius: 30px;
+  content: "";
+  opacity: 0.95;
+  position: absolute;
+  bottom: -30px;
+  right: -30px;
+  height: 250px;
+  width: 250px;
+  z-index: -1;
+}
+
+.box img {
+  width: 250px;
+  position: absolute;
+  top: -130px;
+  left: -60px;
+}
+
+.box h2 {
+  margin: 0;
+  color: var(--space-cadet) 
+}
+
+/* form */
+.box form {
+  overflow: hidden;
+  width: 360px;
+  top: 100px;
+  left: 40px;
+  position: absolute;
+}
+
+/* amount button */
+.amount-group {
+  display: flex;
+  align-items: center;
+  justify-content: left;
+}
+
+.amount-group label {
+  width: 100%;
+  height: 25px;
+  color: var(--white);
+  background-color: var(--independence);
+  padding: 10px;
+  text-align: left;
+  border-radius: 4px;
+  font-size: 20px;
+}
+
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+#set-amount-button input {
+  width: 320px;
+  margin: 0;
+  padding: 0;
+  font-size: 20px;
+  font-family: 'Playfair Display', serif;
+  background-color: transparent;
+  color: white;
+  border: none;
+  outline: none;
+  height: 25px;
+  border-bottom: 0.75px dashed var(--white);
+}
+
+/* form input field */
+.box form .input {
+  width: 100%;
+  margin-top: 25px;
+  padding: 5px 5px;
+  font-size: 16px;
+  font-family: 'Playfair Display', serif;
+  border: 0;
+  color: var(--space-cadet);
+  border-bottom: 1px solid var(--independence);
+  outline: none;
+  background: transparent;
+}
+ 
+::placeholder {
+  color: var(--silver-sand);
+}
+
+/* form button */
+.box form button {
+  margin-top: 40px;
+  height: 35px;
+  width: 100px;
+  cursor: pointer;
+  font-size: 14px;
+  border-radius: 30px;
+  font-family: 'Playfair Display', serif;
+}
+.cancel {
+  border: 1px solid var(--independence);
+  background: transparent;
+  color: var(--independence);
+  outline: none;
+  margin-left: 20px;
+  margin-right: 115px;
+}
+
+/* cancel button in Payment gateway integration page */
+.cancel.pay {
+  border-radius: 5px;
+  margin: 60px 0px 0px;
+  cursor: pointer;
+}
+
+.submit {
+  border: 0;
+  background: var(--independence);
+  color: var(--white);
+  outline: none;
+  margin-right: 20px;
+  transition: all 1s ease-in-out;
+}
+
+.submit:hover, .submit:active{
+  background: var(--white);
+  color: var(--independence);
+  border: 1px solid var(--outrageous-orange);
+  transition: all 700ms ease-in-out;
+}
+
+.quote {
+  margin-top: 20px;
+  font-style: italic;
+  color: var(--space-cadet);
+}
+
+.quote span{
+  padding-left: 192px;
+}
+
+/* quote in Payment gateway integration page */
+.quote.pay{
+  margin-top: 40px;
+}
+
+/* Payment gateway integration page */
+.razorpay{
+  padding: auto;
+}
+
+.razorpay form{
+  top: 35%;
+  left: 33.33%;
+  font-size: 25px;
+}

@@ -1,0 +1,124 @@
+<!-- Receipt Mail template  -->
+
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+
+    <head>
+
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <style>
+            @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@200&family=La+Belle+Aurore&family=Roboto+Slab:wght@400&display=swap');
+
+            body{
+                margin:25px;
+                padding:0;
+                font-family: 'Roboto Slab', serif;
+            }
+
+            img{
+                width: 25%;
+            }
+
+            hr{
+                border: 0;
+                height: 0.35px;
+                background: #333;
+                background-image: linear-gradient(to right, #cccccc, #333333, #cccccc);
+            }
+
+            #content{
+                margin: 15px;
+                border: 1px solid black;
+                padding: 10px;
+                font-family: 'IBM Plex Mono', monospace;
+            }
+
+            #heading{
+                text-align:center;
+            }
+
+            #subheading{
+                text-align:center;
+            }
+
+            #sign{
+                font-family: 'La Belle Aurore', cursive;
+            }
+
+            #data{
+                text-align: justify;
+            }
+
+            #logo{
+                width: 10%;
+            }
+
+            footer p{
+                font-size: 12px;
+                color: darkblue
+            }
+
+            @media (max-width: 767px){
+                body{
+                    font-size: 12px;
+                }
+
+                footer p{
+                    font-size: 8px;
+                }
+            }
+
+            @media (min-width: 768px){
+                #logo{
+                    width: 7%;
+                }
+
+                img{
+                    width: 15%;
+                }
+            }
+        </style>
+
+    </head>
+
+    <body>
+
+        <!-- https://image.freepik.com/free-vector/people-holding-heart-hand-icons_53876-66152.jpg -->
+        <img src="{% static 'Images/people_logo.jpeg' %}">
+        <p>Dear Altruist, <br> Here is your receipt for ypur generous donation to Prayaas Foundation. Thank you for making a difference. </p>
+        <hr>
+
+        <div id='content'>
+            <h3 id='heading'>DONATION RECEIPT</h3>
+            <br>
+            <p><strong>Date</strong>: {{date}} </p>
+            <p ><strong>Name of the Non-Profit Organization</strong>: Prayaas Foundation </p>
+            <p><strong>Registration Number</strong>: E/5******7 </p>
+            <br>
+            <h4 id='subheading'>DONATION INFORMATION</h4>
+            <br>
+            <p><strong> Receipt Id</strong>: {{id}} </p>
+            <p><strong>Donor's Name</strong>: {{name}} </p>
+            <p><strong>Donation Value</strong>: ₹ {{amount}} </p>
+            <p id='data'>I, the undersigned representative, declare under the laws of the Income Tax Act, India, that there were no goods or services provided as part of this donation, and is valid for deduction under Section 80G of the Income Tax Act, India. Furthermore, as of the date of this receipt, the above-mentioned organization is a current and valid non-profit organization in accordance with the standards and registered in India as a Society, under the Registrar of Societies / as a Trust, by making a Trust deed / as a Section 8 Company, under the Companies Act, 2013.</p>
+            <p>Sincerely,</p>
+            <p id='sign'>Prayaas Foundation</p>
+        </div>
+
+        <hr>
+        <p> Best Regards, <br> Your friends at Prayaas Foundation. <br> <img id='logo' src="{% static 'Images/logo.png' %}"/> </p>
+
+        <footer>
+            <p> Prayaas Foundation is a register as a Section 8 Company, Trust or Society #E/5******7. Your donation is tax deductable to the extent allowed by law. No goods or services were provided by Prayaas Foundation in return of this contribution. </p>
+        </footer>
+
+    </body>
+
+</html>
